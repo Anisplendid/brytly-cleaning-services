@@ -239,5 +239,118 @@
 
   <div id="site-footer"></div>
   <script src="assets/js/site.js"></script>
+
+
+  <!-- Viewing Limit Popup -->
+<div id="viewLimitPopup" class="view-limit-overlay">
+    <div class="view-limit-box">
+        <div class="view-limit-icon">⚠️</div>
+
+        <h2>Viewing Limit Exceeded</h2>
+
+        <p>
+            Your viewing limit has been exceeded.
+            Please contact the Author to continue.
+        </p>
+
+        <p class="author-name">
+            Author: <strong>Paul Chukwudi</strong>
+        </p>
+
+        <a
+            href="https://wa.me/2348163430766?text=Hello%20Paul%2C%20I%20would%20like%20to%20continue%20viewing%20the%20website."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-btn"
+        >
+            <span>💬</span> Contact Author on WhatsApp
+        </a>
+    </div>
+</div>
+
+<style>
+    .view-limit-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+    }
+
+    .view-limit-box {
+        width: min(420px, 100%);
+        padding: 32px 25px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.13);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    .view-limit-icon {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .view-limit-box h2 {
+        margin: 0 0 12px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .view-limit-box p {
+        margin: 8px 0;
+        line-height: 1.6;
+        font-size: 15px;
+    }
+
+    .author-name {
+        margin-top: 15px !important;
+    }
+
+    .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+        padding: 13px 20px;
+        border-radius: 10px;
+        background: #25D366;
+        color: #fff !important;
+        text-decoration: none !important;
+        font-size: 15px;
+        font-weight: 600;
+        transition: 0.2s ease;
+    }
+
+    .whatsapp-btn:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.05);
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const popup = document.getElementById("viewLimitPopup");
+
+        // Show popup
+        popup.style.display = "flex";
+
+        // Prevent the page behind the popup from scrolling
+        document.body.style.overflow = "hidden";
+    });
+</script>
+  
+
 </body>
 </html>
